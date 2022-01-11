@@ -1,0 +1,192 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: "Open Sans", sans-serif;
+  }
+}
+
+@layer utilities {
+  .timeline-Viewport {
+    overflow: hidden !important;
+  }
+  .swiper-pagination-bullet-active {
+    background-color: #52b3d9 !important;
+  }
+}
+
+/* body {
+  color: rgb(31, 41, 55);
+  height: 3800px;
+} */
+.container {
+  width: 95%;
+  margin: 0 auto;
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 95%;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1152px;
+  }
+}
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1252px;
+  }
+}
+@media (min-width: 1800px) {
+  .container {
+    max-width: 1452px;
+  }
+}
+.sb {
+  border: 1px solid #dddddd;
+}
+
+#menu-toggle:checked + #menu {
+  display: block;
+}
+
+.navicon {
+  width: 1.125em;
+  height: 0.125em;
+}
+
+.navicon::before,
+.navicon::after {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: all 0.2s ease-out;
+  content: "";
+  background: #ffff;
+}
+
+.navicon::before {
+  top: 5px;
+}
+
+.navicon::after {
+  top: -5px;
+}
+
+.menu-btn:not(:checked) ~ .menu {
+  display: none;
+}
+
+.menu-btn:checked ~ .menu {
+  display: block;
+}
+
+.menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent;
+}
+
+.menu-btn:checked ~ .menu-icon .navicon::before {
+  transform: rotate(-45deg);
+}
+
+.menu-btn:checked ~ .menu-icon .navicon::after {
+  transform: rotate(45deg);
+}
+
+.menu-btn:checked ~ .menu-icon .navicon::before,
+.menu-btn:checked ~ .menu-icon .navicon::after {
+  top: 0;
+}
+
+/* media slider start */
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel-open:checked + .carousel-item {
+  position: static;
+  opacity: 100;
+}
+.carousel-item {
+  -webkit-transition: opacity 0.6s ease-out;
+  transition: opacity 0.6s ease-out;
+}
+#carousel-1:checked ~ .control-1,
+#carousel-2:checked ~ .control-2,
+#carousel-3:checked ~ .control-3 {
+  display: block;
+}
+.carousel-indicators {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  bottom: 2%;
+  left: 0;
+  right: 0;
+  text-align: center;
+  z-index: 10;
+}
+#carousel-1:checked
+  ~ .control-1
+  ~ .carousel-indicators
+  li:nth-child(1)
+  .carousel-bullet,
+#carousel-2:checked
+  ~ .control-2
+  ~ .carousel-indicators
+  li:nth-child(2)
+  .carousel-bullet,
+#carousel-3:checked
+  ~ .control-3
+  ~ .carousel-indicators
+  li:nth-child(3)
+  .carousel-bullet {
+  color: #ffb317; /*Set to match the Tailwind colour you want the active one to be */
+}
+
+/* media slider end*/
